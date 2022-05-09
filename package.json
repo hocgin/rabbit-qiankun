@@ -1,5 +1,6 @@
 {
   "private": true,
+  "name": "rabbit-qiankun",
   "scripts": {
     "start": "umi dev",
     "start:nomock": "cross-env MOCK=none umi dev",
