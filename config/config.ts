@@ -27,10 +27,6 @@ export default defineConfig({
       changeOrigin: true,
       pathRewrite: {'^/api': ''},
     },
-    '/rabbit-dear': {
-      target: 'https://dear.hocgin.top/',
-      pathRewrite: {'^/rabbit-dear': ''},
-    },
   },
   theme: {},
   routes: [...routerConfig],
