@@ -1,5 +1,6 @@
 import Config from './config';
-import { RequestConfig, ErrorShowType, isBrowser, addLocale, getAllLocales, localeInfo } from 'umi';
+import {apps} from './qiankun';
+import {RequestConfig, ErrorShowType, isBrowser, addLocale, getAllLocales, localeInfo} from 'umi';
 
 // 国际化配置
 getAllLocales().forEach(locale => {
@@ -81,7 +82,7 @@ export const request: RequestConfig = {
         ...newOptions.headers,
       };
 
-      return { url, options: newOptions };
+      return {url, options: newOptions};
     },
   ],
   responseInterceptors: [
@@ -89,7 +90,7 @@ export const request: RequestConfig = {
     (response: Response, options: any) => {
       console.debug('[响应拦截器]::', '认证检查');
       if (response.status === 401) {
-        response.clone().json().then(({ redirectUrl }: any) => {
+        response.clone().json().then(({redirectUrl}: any) => {
           if (isBrowser()) {
             window.location.href = `${Config.getSsoServerUrl()}?redirectUrl=${
               redirectUrl ?? window.location.href
@@ -109,4 +110,9 @@ export const request: RequestConfig = {
       return response;
     },
   ],
+};
+
+// 乾坤配置
+export const qiankun = () => {
+  return {apps};
 };

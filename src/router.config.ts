@@ -6,7 +6,7 @@ export default [
       {path: '/', component: '@/pages/index'},
       {path: '/demo', component: '@/pages/demo'},
       {path: '/ssr', component: '@/pages/ssr'},
-      {path: '/dear', microApp: 'rabbit-dear'},
+      {path: '/rabbit-dear', microApp: 'rabbit-dear'},
       {path: '*', component: '@/pages/404'},
     ],
   },

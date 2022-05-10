@@ -2,41 +2,29 @@ import styles from './index.less';
 import React from 'react';
 import {Layout, Menu} from "antd";
 import {Link, useLocation} from "umi";
+import {apps} from '@/qiankun';
+
 
 const BasicLayout: React.FC<{}> = (props, ref) => {
-  let {base}: any = props;
+  console.log('props', apps);
   const selectKey = '/' + useLocation().pathname.split('/')[1];
 
-  return (<div className={styles.normal}>
+  return (<Layout className={styles.normal}>
     <Layout.Header>
-      <div className={styles.logo}>{base?.name}</div>
       <Menu
         theme="dark"
         mode="horizontal"
         defaultSelectedKeys={['home']}
         selectedKeys={[selectKey]}
         style={{lineHeight: '64px'} as any}
+        items={[{name: '/'}, ...apps].map((app: any, index) => ({
+          key: index,
+          label: <Link to={`/${app.name}`}>{app.name}</Link>
+        }))}
       >
-        <Menu.Item key="/">
-          <Link to="/">Home</Link>
-        </Menu.Item>
-        {base?.apps.map((app: any, index: number) => {
-          if (index === 2) {
-            return (
-              <Menu.Item key={app.base}>
-                <Link to="/app3/123">{app.name}</Link>
-              </Menu.Item>
-            );
-          }
-          return (
-            <Menu.Item key={app.base}>
-              <Link to={app.base}>{app.name}</Link>
-            </Menu.Item>
-          );
-        })}
       </Menu>
     </Layout.Header>
-    {props.children}
-  </div>);
+    <Layout.Content>{props.children}</Layout.Content>
+  </Layout>);
 };
 export default BasicLayout;
