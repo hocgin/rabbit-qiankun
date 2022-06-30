@@ -6,7 +6,7 @@ export const apps = [
     credentials: true
   }, {
     title: '支付中心',
-    name: 'rabbit-bmw.manage',
+    name: 'rabbit-bmw-manage',
     entry: '//bmw-manage.hocgin.top',
     credentials: true
   },
