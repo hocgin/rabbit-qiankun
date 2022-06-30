@@ -1,11 +1,11 @@
 import styles from './index.less';
-import { Container } from '@/components';
-import { Link } from 'umi';
+import {Container} from '@/components';
+import logo from '@/assets/logo.jpg';
 
 export default function IndexPage() {
   return (
-    <Container>
-      <h1 className={styles.title}>Page index</h1>
+    <Container className={styles.container}>
+      <img src={logo} className={styles.logo} alt={'logo'}/>
     </Container>
   );
 }

@@ -114,5 +114,14 @@ export const request: RequestConfig = {
 
 // 乾坤配置
 export const qiankun = () => {
-  return {apps};
+  return {
+    apps,
+    lifeCycles: {
+      beforeLoad: console.log,
+      beforeMount: console.log,
+      afterMount: console.log,
+      beforeUnmount: console.log,
+      afterUnmount: console.log,
+    }
+  };
 };

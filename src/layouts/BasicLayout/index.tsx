@@ -38,9 +38,9 @@ const SlaveMenu: React.FC<{ items?: any[], selectKey?: string, theme?: string }>
 
 const BasicLayout: React.FC<{}> = (props, ref) => {
   const selectKey = '/' + useLocation().pathname.split('/')[1];
-  let menus = [{name: 'Home'}, ...apps].map((app: any, index) => ({
+  let menus = [{title: '主页'}, ...apps].map((app: any, index) => ({
     key: index,
-    label: <Link to={`/${app.name}`}>{app.name}</Link>
+    label: <Link to={`/${app.name ?? ''}`}>{app.title}</Link>
   }));
 
   return (<Layout className={styles.normal}>
