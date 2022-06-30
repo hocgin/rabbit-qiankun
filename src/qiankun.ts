@@ -4,5 +4,10 @@ export const apps = [
     name: 'rabbit-dear',
     entry: '//dear.hocgin.top',
     credentials: true
+  }, {
+    title: '支付中心',
+    name: 'rabbit-bmw.manage',
+    entry: '//bmw-manage.hocgin.top',
+    credentials: true
   },
 ];
