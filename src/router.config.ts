@@ -1,12 +1,13 @@
+import {apps as microApps} from './qiankun';
+
 export default [
   {
     path: '/',
     component: '@/layouts/BasicLayout',
     routes: [
-      {path: '/', component: '@/pages/index'},
-      {path: '/demo', component: '@/pages/demo'},
-      {path: '/ssr', component: '@/pages/ssr'},
-      {path: '/rabbit-dear', microApp: 'rabbit-dear'},
+      ...(microApps || []).map(app => ({
+        path: `/${app.name}`, microApp: `${app.name}`
+      })),
       {path: '*', component: '@/pages/404'},
     ],
   },
