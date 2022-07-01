@@ -9,5 +9,10 @@ export const apps = [
     name: 'rabbit-bmw-manage',
     entry: '//bmw-manage.hocgin.top',
     credentials: true
+  }, {
+    title: '兔广场',
+    name: 'rabbit-square',
+    entry: '//rabbit-square',
+    credentials: true
   },
 ];
