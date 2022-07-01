@@ -1,4 +1,4 @@
-name: Deploy::Auto
+name: Deploy::SSR
 
 on:
   workflow_dispatch:
