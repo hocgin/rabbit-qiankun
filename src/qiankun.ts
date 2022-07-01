@@ -12,7 +12,7 @@ export const apps = [
   }, {
     title: '兔广场',
     name: 'rabbit-square',
-    entry: '//rabbit-square',
+    entry: '//manage.hocgin.top',
     credentials: true
   },
 ];
