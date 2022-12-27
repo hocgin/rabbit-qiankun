@@ -5,6 +5,11 @@ export const apps = [
     entry: '//dear.hocgin.top',
     credentials: true
   }, {
+    title: '商城',
+    name: 'rabbit-mall',
+    entry: '//mall.hocgin.top',
+    credentials: true
+  }, {
     title: '支付中心',
     name: 'rabbit-pay-manage',
     entry: '//pay-manage.hocgin.top',
